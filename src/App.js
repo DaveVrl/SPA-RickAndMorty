@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import Cards from './components/Cards/Cards.jsx';
+import { useState } from 'react';
+import Nav from "./components/Nav/Nav.jsx"
+import axios from 'axios';
+import { Routes , Route } from "react-router-dom";
+import About from './components/About/About';
+import Detail from './components/Detail';
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+   //characters inicializa como "characters = []"
+   const [characters, setCharacters] = useState([]);
 
+   const onSearch = (id) => {
+      axios(`https://rickandmortyapi.com/api/character/${id}`)
+      .then(({ data }) => {
+         if (data.name) {
+            setCharacters((oldChars) => [...oldChars, data]);  //spread me hace una copia del estado
+         } else {
+            alert('¡No hay personajes con este ID!');
+         }
+      });
+   }
+
+   const onClose = (id) => {
+      const characterFiltered = characters.filter(character =>
+         character.id !== Number(id))
+      setCharacters(characterFiltered)
+   }
+
+   return (
+      <div className='App'>
+         <Nav onSearch={onSearch}/>
+         <Routes>
+            <Route path='/home' element={<Cards characters={characters} onClose={onClose} />}></Route>
+            <Route path='/about' element={<About/>}/>
+            <Route path='/detail/:id' element={<Detail/>}/>
+         </Routes>
+
+      </div>
+   );
+}
+//Las funciones se ejecutan aquí, pero se pasa por PROPS en cada componente!!! oS / oC
 export default App;
+
+

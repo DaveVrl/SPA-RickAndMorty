@@ -1,0 +1,51 @@
+h3 {
+    font-size: 18px;
+    padding-bottom: 2px;
+    color: white;
+}
+
+.closeBtn {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    left: 212px;
+    top: 10px
+}
+
+.card {
+    position: relative;
+    width: 260px;
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow:hidden;
+    padding: 20px;
+    border-radius: 50px 10px 50px;
+    background-color: #8408ffa1;
+}
+
+.origin {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    border-radius: 100%;
+    box-shadow: 10px 10px 90px 0px rgba(255,255,255,0.45);
+}
+
+.name {
+    font-size: 22px;
+}
+
+.containerh3 {
+    border-radius: 50px 10px 50px;
+    background-color: #000000c9;
+}
+
+
+

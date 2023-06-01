@@ -1,0 +1,28 @@
+.container {
+    width:600px;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 10px 50px 10px 50px;
+    border:solid 2px #000000c9;;
+    background-color: #8408ffa1;
+    box-shadow: 10px 10px 90px 0px rgba(255,255,255,0.65);
+}
+
+.input {
+    height: 28px;
+    width: 200px;
+    border-radius: 50px 0px 0px 10px;
+    text-align: center;
+    background-color: #ffffffe6;
+}
+
+.addBtn {
+    height: 28px;
+    width: 100px;
+    border-radius: 0px 10px 50px 0px;
+    background-color: #000000c9;
+    color: white;
+}
