@@ -33,12 +33,12 @@ const Form = ({login}) => {
     return(
     <form className={style.form} onSubmit={handleSubmit}>
         <label className={style.label} htmlFor="email">Email</label>
-        <input className={style.input} name="email" type="email" value={userData.email} onChange={handleChange} />
-        {errors.email && <p>{errors.email}</p>}
+        <input className={style.input} name="email" type="email" value={userData.email} onChange={handleChange} placeholder="correo electrónico" />
+        {errors.email && <p className={style.error}>{errors.email}</p>}
 
         <label className={style.label} htmlFor="password">Password</label>
-        <input className={style.input} name="password" type="password" value={userData.password} onChange={handleChange} />
-        {errors.password && <p>{errors.password}</p>}
+        <input className={style.input} name="password" type="password" value={userData.password} onChange={handleChange} placeholder="contraseña" />
+        {errors.password && <p className={style.error}>{errors.password}</p>}
 
         <button className={style.btn}>Submit</button>
     </form>

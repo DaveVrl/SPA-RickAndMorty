@@ -1,5 +1,32 @@
 .container {
+    width:620px;
+    min-height: 66px;
     display: flex;
-    justify-content: center;
-    margin-top: 50px;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 50px auto 0;
+    border-radius: 10px 50px 10px 50px;
+    background-color: #6904cdc2;
+    box-shadow: 0px 0px 20px 1px rgba(255,255,255,0.75);
+}
+
+.btn {
+    height: 30px;
+    width: 80px;
+    font-family: 'Audiowide', cursive;
+    background-color: #000000c9;
+    border: none;
+    border-radius: 10px 50px 10px 50px;
+}
+
+.navlink {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.btn:hover {
+    box-shadow: 0px 0px 10px 1px rgba(255,255,255,0.75);
+    cursor: pointer;
+    font-weight: 600;
+    .navlink{color:greenyellow;} /*Anidado*/
 }

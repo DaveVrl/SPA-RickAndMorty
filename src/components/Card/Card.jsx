@@ -7,7 +7,7 @@ export default function Card({id, name, status, species, gender, origin, image, 
          <button className={style.closeBtn} onClick={() => onClose(id)}>X</button>
          <img className={style.img} src={image} alt='' />
          <div className={style.containerh3}>
-         <NavLink to={`/detail/${id}`}>
+         <NavLink className={style.navlink} to={`/detail/${id}`}>
          <h3 className={style.name}>{name}</h3>
          </NavLink>
          <h3>{status}</h3>

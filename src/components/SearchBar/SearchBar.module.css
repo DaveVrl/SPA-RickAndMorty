@@ -1,28 +1,34 @@
-.container {
-    width:600px;
-    min-height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    border-radius: 10px 50px 10px 50px;
-    border:solid 2px #000000c9;
-    background-color: #8408ffa1;
-    box-shadow: 10px 10px 90px 0px rgba(255,255,255,0.65);
-}
-
 .input {
-    height: 28px;
+    height: 30px;
     width: 200px;
-    border-radius: 50px 0px 0px 10px;
+    border-radius: 10px 0px 0px 10px;
     text-align: center;
+    border: inset 2px black;
+    font-family: 'Audiowide', cursive;
 }
 
 .addBtn {
-    height: 28px;
+    height: 30px;
     width: 100px;
-    border-radius: 0px 10px 50px 0px;
+    border-radius: 0px 50px 10px 0px;
     background-color: #000000c9;
     color: white;
     font-family: 'Audiowide', cursive;
+    border: none;
+}
+
+.input:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px 1px rgba(255,255,255,0.75);
+}
+
+.input:hover {
+    box-shadow: 0px 0px 10px 1px rgba(255,255,255,0.75);
+}
+
+.addBtn:hover {
+    box-shadow: 0px 0px 10px 1px rgba(255,255,255,0.75);
+    cursor: pointer;
+    font-weight: 600;
+    color:greenyellow;
 }

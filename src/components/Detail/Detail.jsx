@@ -1,3 +1,4 @@
+import style from "./Detail.module.css"
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useState , useEffect } from "react";
@@ -25,13 +26,15 @@ const Detail = () => {
     
      return(
         <div>{
-            character && <div>
-                <h2>{character?.name}</h2>
-                <h2>{character?.status}</h2>
-                <h2>{character?.species}</h2>
-                <h2>{character?.gender}</h2>
-                <h2>{character?.origin?.name}</h2>
-                <img src={character?.image} alt={character?.name}/>
+            character && <div className={style.container}>
+                <div className={style.textos}>
+                <h2 className={style.name}><span>Name: </span>{character?.name}</h2>
+                <h2><span>Status: </span>{character?.status}</h2>
+                <h2><span>Specie: </span>{character?.species}</h2>
+                <h2><span>Gender: </span>{character?.gender}</h2>
+                <h2><span>Origin: </span>{character?.origin?.name}</h2>
+                </div>
+                <img className={style.image} src={character?.image} alt={character?.name}/>
             </div>
         }
         </div>

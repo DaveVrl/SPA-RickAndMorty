@@ -3,7 +3,7 @@ import axios from 'axios';
 import Cards from './components/Cards/Cards.jsx';
 import Nav from "./components/Nav/Nav.jsx"
 import About from './components/About/About';
-import Detail from './components/Detail';
+import Detail from './components/Detail/Detail.jsx';
 import Form from './components/Form/Form';
 import { Routes , Route , useLocation , useNavigate } from "react-router-dom";
 import { useState , useEffect } from 'react';

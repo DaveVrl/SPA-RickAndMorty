@@ -3,8 +3,8 @@
    flex-direction: column;
    text-align: center;
    min-height: 100vh;
-   width: 100%;
-   background-image: url(./components/fondo/fondoapp.jpg);
+   margin: 0 auto;
+   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) , url(./components/fondo/fondoapp.jpg);
    background-size: cover;
    background-attachment: fixed;
    /* background-color: gray; */
