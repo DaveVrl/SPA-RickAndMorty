@@ -1,15 +1,37 @@
 import './App.css'
-import Cards from './components/Cards/Cards.jsx';
-import { useState } from 'react';
-import Nav from "./components/Nav/Nav.jsx"
 import axios from 'axios';
-import { Routes , Route } from "react-router-dom";
+import Cards from './components/Cards/Cards.jsx';
+import Nav from "./components/Nav/Nav.jsx"
 import About from './components/About/About';
 import Detail from './components/Detail';
+import Form from './components/Form/Form';
+import { Routes , Route , useLocation , useNavigate } from "react-router-dom";
+import { useState , useEffect } from 'react';
 
-
+   const EMAIL = "admin@gmail.com";
+   const PASSWORD = "admin123";
 
 function App() {
+
+   const location = useLocation();
+   const navigate = useNavigate();
+
+   
+   const [access, setAccess] = useState(false);
+
+   const login = (userData) => {
+     if (userData.password === PASSWORD && userData.email === EMAIL) {
+       setAccess(true);
+       navigate("/home"); //Si da true me lleva a /home
+     }
+   }
+
+   useEffect(() => {
+      !access && navigate('/'); //No me deja ingresar manualmente
+   }, [access]);                //Nos obliga a completar el Login
+   
+
+   
    //characters inicializa como "characters = []"
    const [characters, setCharacters] = useState([]);
 
@@ -32,9 +54,16 @@ function App() {
 
    return (
       <div className='App'>
-         <Nav onSearch={onSearch}/>
+         {
+            location.pathname !== '/' && <Nav onSearch={onSearch}/>
+            // Con ternario:
+            // location.pathname !== '/'
+            // ? <Nav onSearch={onSearch}/>
+            // : null 
+         }
          <Routes>
-            <Route path='/home' element={<Cards characters={characters} onClose={onClose} />}></Route>
+            <Route path='/' element={<Form login={login}/>}/>
+            <Route path='/home' element={<Cards characters={characters} onClose={onClose} />}/>
             <Route path='/about' element={<About/>}/>
             <Route path='/detail/:id' element={<Detail/>}/>
          </Routes>

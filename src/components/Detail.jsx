@@ -21,6 +21,7 @@ const Detail = () => {
         return setCharacter({});
      }, [id]);
     
+    // El ?. es el operador de encadenamiento opcional de JS, que permite acceder a props anidadas sin generar un error si una de ellas es null o undefined.
     
      return(
         <div>{
