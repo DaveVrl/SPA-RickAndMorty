@@ -12,6 +12,9 @@ const Nav = ({onSearch}) => {
             <button className={style.btn}>
                 <NavLink className={style.navlink} to="/About">About</NavLink>
             </button>
+            <button className={style.btn}>
+                <NavLink className={style.navlink} to="./Favorites">Favorites</NavLink> 
+            </button>
         </div>
     )
 }
