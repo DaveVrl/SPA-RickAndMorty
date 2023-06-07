@@ -1,9 +1,30 @@
 .container {
     display: flex;
+    flex-direction: column;
+}
+
+.selectContainer {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+.selectContainer select {
+    background-color: black;
+    color: white;
+    font-family: 'Audiowide', cursive;
+    font-size: 14px;
+    border-radius: 10px 50px 10px 50px;
+    text-align: center;
+    padding: 2px;
+}
+
+.containerCards {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
     text-align: center;
-    margin: 58px 0;
+    margin: 40px 0;
     padding: 0 20px;
 }
