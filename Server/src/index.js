@@ -15,4 +15,4 @@ http.createServer((req , res) => {
         return res.writeHead(200 , {"Content-type": "application/json"}).end(JSON.stringify(characterFound))
     }
 
-}).listen(3001 , "localhost")
+}).listen(3001)
