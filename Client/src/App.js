@@ -9,6 +9,7 @@ import Favorites from './components/Favorites/Favorites.jsx';
 import { Routes , Route , useLocation , useNavigate } from "react-router-dom";
 import { useState , useEffect } from 'react';
 
+const URL = 'http://localhost:3001/rickandmorty/login/';
 
 
 function App() {
@@ -18,15 +19,18 @@ function App() {
    
    const [access, setAccess] = useState(false);
 
-   const login = (userData) => {
-      const { email, password } = userData;
-      const URL = 'http://localhost:3001/rickandmorty/login/';
-      axios(URL + `?email=${email}&password=${password}`)
-      .then(({ data }) => {
+   const login = async (userData) => {
+      try {
+         const { email, password } = userData;
+         const { data } = await axios(URL + `?email=${email}&password=${password}`);
          const { access } = data;
+
          setAccess(data);
          access && navigate('/home');
-      });
+         
+      } catch (error) {
+         console.log(error.message)
+      }
    }
 
    useEffect(() => {
@@ -38,15 +42,17 @@ function App() {
    //characters inicializa como "characters = []"
    const [characters, setCharacters] = useState([]);
 
-   const onSearch = (id) => {
-      axios(`http://localhost:3001/rickandmorty/character/${id}`)
-      .then(({ data }) => {
-         if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);  //spread me hace una copia del estado
-         } else {
-            alert('¡No hay personajes con este ID!');
-         }
-      });
+   const onSearch = async (id) => {
+      try {
+         const { data } = await axios(`http://localhost:3001/rickandmorty/character/${id}`);
+         
+            if (data.name) {
+               setCharacters((oldChars) => [...oldChars, data]);
+            };
+
+      } catch (error) {
+         alert('¡No hay personajes con este ID!');
+      }
    }
 
    const onClose = (id) => {
