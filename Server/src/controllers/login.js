@@ -14,7 +14,7 @@ const login = async (req , res) => {
         : res.status(403).send("Contraseña incorrecta")
     
     } catch (error) {
-        return res.status(500).json(error.message);  
+        return res.status(500).json({error: error.message});  
     }
 };
 

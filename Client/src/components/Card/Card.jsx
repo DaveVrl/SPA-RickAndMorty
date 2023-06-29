@@ -13,7 +13,7 @@ function Card({id, name, status, species, gender, origin, image, onClose, addFav
       removeFav(id);
     } else {
       setIsFav(true);
-      addFav({ id, name, species, gender, image });
+      addFav({ id, name, species, gender, image , origin , status });
       //pasamos el obj con esas propiedades
     }
   };

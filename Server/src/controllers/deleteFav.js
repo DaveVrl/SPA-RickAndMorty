@@ -11,7 +11,7 @@ const deleteFav = async (req , res) => {
         return res.status(200).json(allFavorites);
 
     } catch (error) {
-        return res.statu(500).json(error.message);
+        return res.status(500).json({error: error.message});
     }
 };
 
