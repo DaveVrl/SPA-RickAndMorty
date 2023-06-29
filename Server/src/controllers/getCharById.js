@@ -57,8 +57,6 @@ const getCharById = async (req , res) => {
     }
 };
 
-module.exports = {
-    getCharById
-};
+module.exports = getCharById ;
 
 //error es un obj y en su propiedad message nos llega el msj
